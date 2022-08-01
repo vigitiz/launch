@@ -36,12 +36,8 @@ EOF
 cat > heimdalld.service <<EOF
 [Unit]
   Description=heimdalld
-  StartLimitIntervalSec=500
-  StartLimitBurst=5
 
 [Service]
-  Restart=on-failure
-  RestartSec=5s
   WorkingDirectory=$NODE_DIR
   ExecStart=$BIN_DIR/heimdalld start
   Type=simple
@@ -54,12 +50,8 @@ EOF
 cat > heimdalld-rest-server.service <<EOF
 [Unit]
   Description=heimdalld-rest-server
-  StartLimitIntervalSec=500
-  StartLimitBurst=5
 
 [Service]
-  Restart=on-failure
-  RestartSec=5s
   WorkingDirectory=$NODE_DIR
   ExecStart=$BIN_DIR/heimdalld rest-server
   Type=simple
@@ -82,3 +74,4 @@ cat > heimdalld-bridge.service <<EOF
 [Install]
   WantedBy=multi-user.target
 EOF
+

@@ -10,7 +10,7 @@ networks:
 services:
 
   heimdall0:
-    image: "shibaswaparmy/heimdall:${HEIMDALL_TAG}"
+    image: "maticnetwork/heimdall:${HEIMDALL_TAG}"
     command: >
       bash -c "
         heimdalld init --home /root/.heimdalld --chain-id ${HEIMDALL_CHAIN_ID} \
@@ -34,7 +34,7 @@ services:
       - "26656:26656"
     
   bor0:
-    image: "shibaswaparmy/bor:${BOR_TAG}"
+    image: "maticnetwork/bor:${BOR_TAG}"
     container_name: bor0
     command: >
       sh -c "

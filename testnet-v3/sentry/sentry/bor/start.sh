@@ -14,7 +14,7 @@ bor --datadir $DATA_DIR \
   --ipcpath $DATA_DIR/bor.ipc \
   --http.api 'eth,net,web3,txpool,bor' \
   --syncmode 'full' \
-  --networkid '7352' \
+  --networkid '80001' \
   --miner.gaslimit '20000000' \
   --miner.gastarget '20000000' \
   --txpool.nolocals \
@@ -26,4 +26,4 @@ bor --datadir $DATA_DIR \
   --maxpeers 200 \
   --metrics \
   --pprof --pprof.port 7071 --pprof.addr '0.0.0.0'
-  --bootnodes "enode://fa05f4874f2b0dc79f82b8d0f8795363ec44d47f3f92f031e12e76b1a62bf5d64f085051f9e968c6e9263f3bcdd0e15dd6e6742707e91a5293da00f13e018417@10.0.0.87:30303"
+  
