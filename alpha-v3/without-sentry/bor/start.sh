@@ -21,7 +21,7 @@ bor --datadir $DATA_DIR \
   --ipcpath $DATA_DIR/bor.ipc \
   --http.api 'eth,net,web3,txpool,bor' \
   --syncmode 'full' \
-  --networkid '80001' \
+  --networkid '7352' \
   --miner.gaslimit '20000000' \
   --miner.gastarget '20000000' \
   --txpool.nolocals \
@@ -38,4 +38,3 @@ bor --datadir $DATA_DIR \
   --metrics \
   --pprof --pprof.port 7071 --pprof.addr '0.0.0.0' \
   --mine
-  

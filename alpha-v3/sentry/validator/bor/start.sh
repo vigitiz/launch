@@ -20,7 +20,7 @@ bor --datadir $DATA_DIR \
   --http.port 8545 \
   --ipcpath $DATA_DIR/bor.ipc \
   --http.api 'eth,net,web3,txpool,bor' \
-  --networkid '80001' \
+  --networkid '7352' \
   --syncmode 'full' \
   --miner.gaslimit '20000000' \
   --miner.gastarget '20000000' \
@@ -38,4 +38,3 @@ bor --datadir $DATA_DIR \
   --metrics \
   --pprof --pprof.port 7071 --pprof.addr '0.0.0.0' \
   --mine
-  
