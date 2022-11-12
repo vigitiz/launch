@@ -21,7 +21,7 @@ cat > bor.service <<EOF
   Restart=on-failure
   RestartSec=5s
   WorkingDirectory=$NODE_DIR
-  EnvironmentFile=/etc/shibarium/metadata
+  EnvironmentFile=/etc/shib/metadata
   ExecStartPre=/bin/chmod +x $NODE_DIR/bor/start.sh
   ExecStart=/bin/bash $NODE_DIR/bor/start.sh $VALIDATOR_ADDRESS
   Type=simple
