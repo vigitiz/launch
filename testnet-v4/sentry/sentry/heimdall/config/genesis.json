@@ -218,10 +218,10 @@
     "chainmanager": {
       "params": {
         "mainchain_tx_confirmations": "6",
-        "maticchain_tx_confirmations": "10",
+        "shibariumchain_tx_confirmations": "10",
         "chain_params": {
           "bor_chain_id": "7352",
-          "matic_token_address": "0x809bbf767883277f6fdB8f378489B259A02fD7a7",
+          "bone_token_address": "0x809bbf767883277f6fdB8f378489B259A02fD7a7",
           "staking_manager_address": "0x73e2564a79C63b0d6b72103591b1c99F01E2E462",
           "slash_manager_address": "0x1187dfd2159268607611E32A4EF51EAF43c3D5D5",
           "root_chain_address": "0x86ea86DeBd4E219Da11Ce765D75B5C84EC0145b8",

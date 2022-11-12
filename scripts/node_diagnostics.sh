@@ -48,7 +48,7 @@ fi
 
 # //check bor sync
 threshold=20
-var1=$(curl -X POST https://polygon-rpc.com/ --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":83}' -s | jq '.result')
+var1=$(curl -X POST https://shibarium-rpc.com/ --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":83}' -s | jq '.result')
 var1="$(echo "ibase=16; ${var1^^}" | bc)"
 var2=$(curl -H "Content-Type: application/json" -X POST http://localhost:8545/ --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":83}' -s | jq '.result')
 var2="$(echo "ibase=16; ${var2^^}" | bc)"
@@ -59,7 +59,7 @@ if [ "$var3" -gt "$threshold" ]; then
 fi
 
 # //check heimdall sync
-var4=$(curl -X POST https:/tendermint.api.matic.network/status --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":83}' -s | jq '.result.sync_info.latest_block_height')
+var4=$(curl -X POST https:/tendermint.api.shibarium.network/status --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":83}' -s | jq '.result.sync_info.latest_block_height')
 var4="$(echo "ibase=16; ${var4^^}" | bc)"
 var5=$(curl -X GET http://localhost:26657/status -s | jq '.result.sync_info.latest_block_height')
 var5="$(echo "ibase=16; ${var5^^}" | bc)"
@@ -94,7 +94,7 @@ fi
 # //check heimdall genesis
 
 localGenesisTime=$(cat ~/.heimdalld/config/genesis.json | jq ".genesis_time") 
-remoteGenesisTime=$(curl -s https://raw.githubusercontent.com/maticnetwork/launch/master/mainnet-v1/sentry/sentry/heimdall/config/genesis.json | jq ".genesis_time")
+remoteGenesisTime=$(curl -s https://raw.githubusercontent.com/shibariumnetwork/launch/master/mainnet-v1/sentry/sentry/heimdall/config/genesis.json | jq ".genesis_time")
 
 [[ "$localGenesisTime" == "$remoteGenesisTime" ]] || echo -e "\e[31mHeimdall is not init with correct Genesis."
 

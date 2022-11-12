@@ -1,21 +1,21 @@
-This readme is for setting up full nodes for mumbai/mainnet node for matic network using docker-compose
+This readme is for setting up full nodes for mumbai/mainnet node for shibarium network using docker-compose
 
 Download the latest snapshot for mainnet full node. We periodically take new snapshots and will publish new links.
 ```
-wget -c https://matic-blockchain-snapshots.s3.amazonaws.com/matic-mainnet/bor-fullnode-snapshot-2021-06-16.tar.gz
-wget -c https://matic-blockchain-snapshots.s3.amazonaws.com/matic-mainnet/heimdall-fullnode-snapshot-2021-06-16.tar.gz
+wget -c https://shibarium-blockchain-snapshots.s3.amazonaws.com/shibarium-mainnet/bor-fullnode-snapshot-2021-06-16.tar.gz
+wget -c https://shibarium-blockchain-snapshots.s3.amazonaws.com/shibarium-mainnet/heimdall-fullnode-snapshot-2021-06-16.tar.gz
 ```
 
 Download the latest snapshot for mumbai full node
 ```
-wget -c https://matic-blockchain-snapshots.s3.amazonaws.com/matic-mumbai/bor-snapshot-2021-03-19.tar.gz
-wget -c https://matic-blockchain-snapshots.s3.amazonaws.com/matic-mumbai/heimdall-snapshot-2021-03-19.tar.gz
+wget -c https://shibarium-blockchain-snapshots.s3.amazonaws.com/shibarium-mumbai/bor-snapshot-2021-03-19.tar.gz
+wget -c https://shibarium-blockchain-snapshots.s3.amazonaws.com/shibarium-mumbai/heimdall-snapshot-2021-03-19.tar.gz
 ```
 
 Download the latest snapshot for mainnet archive node. We periodically take new snapshots and will publish new links.
 ```
-wget -c https://matic-blockchain-snapshots.s3.amazonaws.com/matic-mainnet/bor-archive-node-snapshot-2021-06-17.tar.gz
-wget -c https://matic-blockchain-snapshots.s3.amazonaws.com/matic-mainnet/heimdall-archive-node-snapshot-2021-06-17.tar.gz
+wget -c https://shibarium-blockchain-snapshots.s3.amazonaws.com/shibarium-mainnet/bor-archive-node-snapshot-2021-06-17.tar.gz
+wget -c https://shibarium-blockchain-snapshots.s3.amazonaws.com/shibarium-mainnet/heimdall-archive-node-snapshot-2021-06-17.tar.gz
 ```
 
 Note - If you are using different snapshot files, make changes for file names accordingly in the env files. We periodically take new snapshots and will publish new links.
@@ -42,14 +42,14 @@ mv heimdall-startup.sh heimdall/scripts
 
 For setting up nodes:
 ```
-docker-compose -f matic-sentry-with-snapshotting.yml --env-file <env-file> up
+docker-compose -f shibarium-sentry-with-snapshotting.yml --env-file <env-file> up
 ```
 
 If your docker-compose doesn't support `--env-file` flag, then copy mumbai.env/mainnet.env to `.env` and run the following command
 
 For setting up nodes:
 ```
-docker-compose -f matic-sentry-with-snapshotting.yml up
+docker-compose -f shibarium-sentry-with-snapshotting.yml up
 ```
 
 For checking the status of heimdall use the following api
