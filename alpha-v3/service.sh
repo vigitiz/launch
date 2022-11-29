@@ -16,19 +16,17 @@ cat > bor.service <<EOF
   Description=bor
   StartLimitIntervalSec=500
   StartLimitBurst=5
-
 [Service]
   Restart=on-failure
   RestartSec=5s
   WorkingDirectory=$NODE_DIR
-  EnvironmentFile=/etc/matic/metadata
+  EnvironmentFile=/etc/shib/metadata
   ExecStartPre=/bin/chmod +x $NODE_DIR/bor/start.sh
   ExecStart=/bin/bash $NODE_DIR/bor/start.sh $VALIDATOR_ADDRESS
   Type=simple
   User=$USER
   KillSignal=SIGINT
   TimeoutStopSec=120
-
 [Install]
   WantedBy=multi-user.target
 EOF
@@ -36,13 +34,11 @@ EOF
 cat > heimdalld.service <<EOF
 [Unit]
   Description=heimdalld
-
 [Service]
   WorkingDirectory=$NODE_DIR
-  ExecStart=$BIN_DIR/heimdalld start
+  ExecStart=$BIN_DIR/heimdalld start --home /data/heimdalld
   Type=simple
   User=$USER
-
 [Install]
   WantedBy=multi-user.target
 EOF
@@ -50,13 +46,11 @@ EOF
 cat > heimdalld-rest-server.service <<EOF
 [Unit]
   Description=heimdalld-rest-server
-
 [Service]
   WorkingDirectory=$NODE_DIR
-  ExecStart=$BIN_DIR/heimdalld rest-server
+  ExecStart=$BIN_DIR/heimdalld rest-server --home /data/heimdalld
   Type=simple
   User=$USER
-
 [Install]
   WantedBy=multi-user.target
 EOF
@@ -64,14 +58,11 @@ EOF
 cat > heimdalld-bridge.service <<EOF
 [Unit]
   Description=heimdalld-bridge
-
 [Service]
   WorkingDirectory=$NODE_DIR
   ExecStart=$BIN_DIR/bridge start --all
   Type=simple
   User=$USER
-
 [Install]
   WantedBy=multi-user.target
 EOF
-
